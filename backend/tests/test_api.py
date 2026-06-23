@@ -1,4 +1,11 @@
 import pytest
+import sys
+import os
+
+# Agregar la carpeta /app al path (dentro del contenedor)
+sys.path.insert(0, '/app')
+
+# Ahora importar directamente
 from app import app, db
 
 @pytest.fixture
