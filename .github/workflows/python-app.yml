@@ -27,4 +27,4 @@ jobs:
     - name: Ejecutar pruebas
       run: |
         cd backend
-        pytest -v
+        PYTHONPATH=$PWD pytest -v
