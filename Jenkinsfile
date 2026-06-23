@@ -27,10 +27,20 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Deploy with CloudBees CD') {
             steps {
-                echo '==> Desplegando contenedores...'
+                echo '==> Desplegando con CloudBees CD...'
                 sh 'docker compose up -d'
+                
+                // Registrar el despliegue en CloudBees CD
+                step([
+                    $class: 'CloudBeesCDDeployStep',
+                    applicationName: 'mi-proyecto-ci',
+                    version: env.BUILD_NUMBER,
+                    environmentName: 'development'
+                ])
+                
+                echo '==> Despliegue registrado en CloudBees CD'
             }
         }
 
