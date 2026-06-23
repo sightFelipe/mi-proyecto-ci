@@ -30,3 +30,4 @@ El sistema se compone de dos contenedores Docker:
 
 ```bash
 docker compose up -d"# Travis CI build" 
+"# Este es el trigger que Travis esperaba" 
