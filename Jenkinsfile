@@ -39,9 +39,9 @@ pipeline {
                 echo '==> Verificando API...'
                 sh '''
                     for i in 1 2 3 4 5; do
-                        if curl -sf http://localhost:5000/api/health > /dev/null; then
+                        if curl -sf http://mi-backend:5000/api/health > /dev/null; then
                             echo "Backend respondiendo correctamente."
-                            curl -s http://localhost:5000/api/health
+                            curl -s http://mi-backend:5000/api/health
                             exit 0
                         fi
                         echo "Intento $i: backend no responde, esperando..."
