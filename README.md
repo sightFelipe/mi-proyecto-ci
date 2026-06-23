@@ -29,4 +29,4 @@ El sistema se compone de dos contenedores Docker:
 ## Cómo levantar el proyecto
 
 ```bash
-docker compose up -d
+docker compose up -d"# Travis CI build" 
